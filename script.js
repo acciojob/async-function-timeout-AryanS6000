@@ -3,7 +3,7 @@ function wait (ms){
 }
  async function showmessage(){
 	 let text = document.getElementById("text").value;
-	 let delay = document.getElementById("delay").value;
+	 let delay = parseInt(document.getElementById("delay").value);
 	let output = document.getElementById("output");
 	   if(isNaN(delay) || delay<0){
 		    output.textContent = "please enter a valid delay";
@@ -11,7 +11,7 @@ function wait (ms){
 	      if(!text){
 		    output.textContent = "please enter a valid text";
 	   } 
-	  output.textContent = "waiting";
+	  output.textContent = "";
 	await wait(delay);
 	output.textContent = text;
 }
